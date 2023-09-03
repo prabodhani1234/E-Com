@@ -14,6 +14,7 @@ import Menu from "./page/Menu";
 import About from "./page/About";
 import Contact from "./page/Contact";
 import Login from './page/login';
+import Newproduct from './page/Newproduct';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="login" element={<Login/>} />
+      <Route path="newproduct" element={<Newproduct/>} />
     </Route>
   )
 );
