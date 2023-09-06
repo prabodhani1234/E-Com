@@ -64,7 +64,8 @@ const Signup = () => {
               })
               const dataRes = await fetchData.json()
               console.log(dataRes)
-                alert("Successful")
+              
+                alert(dataRes.message)
                 //navigate("/login")
             }else{
                 alert("Password and confirm password not equal")
