@@ -36,6 +36,8 @@ app.get("/",(req,res)=>{
     res.send("Server is running")
 })
 
+//Sign UP
+
 app.post("/signup", async (req, res) => {
   try {
     const { email } = req.body;
