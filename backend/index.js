@@ -57,6 +57,40 @@ app.post("/signup", async (req, res) => {
   }
 });
 
+//api login
+app.post("/login", async (req, res) => {
+  try {
+    const { email } = req.body;
+    const result = await userModel.findOne({ email: email }).exec();
+
+    if (result) {
+      const dataSend = {
+        _id: result._id,
+        firstName: result.firstName,
+        lastName: result.lastName,
+        email: result.email,
+        image: result.image,
+      };
+      console.log(dataSend);
+      res.send({
+        message: "Login is successfully",
+        alert: true,
+        data: dataSend,
+      });
+    } else {
+      res.send({
+        message: "Email is not available, please sign up",
+        alert: false,
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({
+      message: "An error occurred during login",
+      alert: false,
+    });
+  }
+});
 
 
 //server is ruuning
